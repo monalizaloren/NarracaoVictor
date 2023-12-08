@@ -89,7 +89,46 @@ const navegarTela = () => {
           placeholder={"Nome"}
           placeholderTextColor={"#FFFFFF"}
         />
-        {/* Restante do seu código... */}
+         <TextInput
+            style={styles.textinput}
+            onChangeText={text => this.setState({ last_name: text })}
+            placeholder={"Sobrenome"}
+            placeholderTextColor={"#FFFFFF"}
+
+          />
+          <TextInput
+            style={styles.textinput}
+            onChangeText={text => this.setState({ email: text })}
+            placeholder={"Digite o e-mail"}
+            placeholderTextColor={"#FFFFFF"}
+
+          />
+          <TextInput
+            style={styles.textinput}
+            onChangeText={text => this.setState({ password: text })}
+            placeholder={"Digite a senha"}
+            placeholderTextColor={"#FFFFFF"}
+            secureTextEntry
+          />
+          <TextInput
+            style={styles.textinput}
+            onChangeText={text => this.setState({ confirmPassword: text })}
+            placeholder={"Digite a senha novamente"}
+            placeholderTextColor={"#FFFFFF"}
+            secureTextEntry
+          />
+          <TouchableOpacity
+            style={[styles.button, { marginTop: 20 }]}
+            onPress={() => this.registerUser(email, password, confirmPassword, first_name, last_name)}
+          >
+            <Text style={styles.buttonText}>Registrar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.replace("Login")}
+          >
+            <Text style={styles.buttonTextNewUser}>Login</Text>
+          </TouchableOpacity>
+        </View>
 
         <TouchableOpacity
           style={[styles.button, { marginTop: 20 }]}
